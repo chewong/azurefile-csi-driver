@@ -16,6 +16,12 @@
 
 set -uo pipefail
 
+if [ -v kubeconfig ]; then
+	echo $kubeconfig | base64 -d
+	mkdir $HOME/.kube/
+	echo $kubeconfig | base64 -d > $HOME/.kube/config
+fi
+
 kubectl get daemonsets csi-azurefile-node -n kube-system; checkAzureFileDriver=$?;
 if [ $checkAzureFileDriver -ne 0 ]; then
     echo "AzureFile csi driver daemonset not found";

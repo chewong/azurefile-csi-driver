@@ -39,3 +39,9 @@ jobs:
       script:
         - make azurefile
         - make integration-test
+    - stage: test
+      name: "e2e test"
+      install:
+        - GO111MODULE=off go get github.com/kubernetes/kubernetes/cmd/kubectl
+      script:
+        - make e2e-test
