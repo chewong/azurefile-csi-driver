@@ -9,6 +9,7 @@ This driver allows Kubernetes to use [azure file](https://docs.microsoft.com/en-
 ### Project Status
 Status: Beta
 
+
 ### Container Images & CSI Compatibility:
 |Azure File CSI Driver Version  | Image                                              | v0.3.0| v1.0.0 |
 |-------------------------------|----------------------------------------------------|-------|--------|
