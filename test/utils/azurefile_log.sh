@@ -43,3 +43,5 @@ LABEL='app=csi-azurefile-node'
 kubectl get pods -n${NS} -l${LABEL} \
     | awk 'NR>1 {print $1}' \
     | xargs -I {} kubectl logs {} --prefix -c${CONTAINER} -n${NS}
+
+exit 0
